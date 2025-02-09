@@ -15,6 +15,14 @@ const Envelope: React.FC<EnvelopeProps> = () => {
   const [showProposal, setShowProposal] = useState(false);
   const [fadeVideos, setFadeVideos] = useState(false);
   const [showHeart, setShowHeart] = useState(false);
+  const [videosLoaded, setVideosLoaded] = useState(false);
+
+  const handleVideoLoad = (event: React.SyntheticEvent<HTMLVideoElement>) => {
+    const video = event.target as HTMLVideoElement;
+    video.play().catch((error) => {
+      console.log("Video autoplay failed:", error);
+    });
+  };
 
   useEffect(() => {
     const playAudio = async () => {
@@ -112,13 +120,9 @@ const Envelope: React.FC<EnvelopeProps> = () => {
           isFlapped ? "flap" : ""
         }`}
         onClick={!isFlapped ? handleEnvelopeClick : undefined}
-        style={{ transformOrigin: "center", scale: 1, zIndex: 10 }}
-        animate={isFlapped ? { y: 150, opacity: showHeart ? 0 : 1 } : { y: 0 }}
-        transition={{
-          duration: 0.8,
-          opacity: { duration: 1.2, ease: "easeInOut" },
-          y: { duration: 0.8 },
-        }}
+        style={{ transformOrigin: "center", scale: 1.5, zIndex: 10 }}
+        animate={isFlapped ? { y: 350, opacity: showHeart ? 0 : 1 } : { y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         <div className="envelope relative w-[300px] h-[230px]">
           <motion.div
@@ -237,8 +241,11 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                               className="w-full h-full"
                               style={{
                                 width: "100%",
-                                height: "100%",                                                        
+                                height: "100%",
+                                objectFit: "cover", // Makes video cover the container
+                                objectPosition: "center", // Centers the video
                               }}
+                              onLoadedData={handleVideoLoad}
                             />
                           </motion.div>
 
@@ -275,8 +282,10 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                               style={{
                                 width: "100%",
                                 height: "100%",
-                              
+                                objectFit: "cover", // Makes video cover the container
+                                objectPosition: "center", // Centers the video
                               }}
+                              onLoadedData={handleVideoLoad}
                             />
                           </motion.div>
                         </AnimatePresence>
