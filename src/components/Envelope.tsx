@@ -235,6 +235,8 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                           >
                             <video
                               src="/photo/vid1.MOV"
+                               playsInline
+  webkit-playsinline="true"
                               autoPlay
                               muted
                               loop
@@ -278,6 +280,8 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                           >
                             <video
                               src="/photo/vid2.MOV"
+                               playsInline
+  webkit-playsinline="true"
                               autoPlay
                               muted
                               loop
