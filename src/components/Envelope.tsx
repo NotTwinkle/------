@@ -237,10 +237,7 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                               className="w-full h-full"
                               style={{
                                 width: "100%",
-                                height: "100%",
-                                objectFit: "cover", // Makes video cover the container
-                                objectPosition: "center", // Centers the video
-                                transform: "scale(1.5)", // Optional: Zoom in more if needed
+                                height: "100%",                                                        
                               }}
                             />
                           </motion.div>
@@ -278,9 +275,7 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                               style={{
                                 width: "100%",
                                 height: "100%",
-                                objectFit: "cover", // Makes video cover the container
-                                objectPosition: "center", // Centers the video
-                                transform: "scale(1.5)", // Optional: Zoom in more if needed
+                              
                               }}
                             />
                           </motion.div>
