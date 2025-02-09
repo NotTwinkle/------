@@ -244,6 +244,9 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                                 height: "100%",
                                 objectFit: "cover", // Makes video cover the container
                                 objectPosition: "center", // Centers the video
+                                WebkitUserSelect: "none", // Prevents selection
+            userSelect: "none",
+            WebkitTouchCallout: "none",
                               }}
                               onLoadedData={handleVideoLoad}
                             />
@@ -284,6 +287,9 @@ const Envelope: React.FC<EnvelopeProps> = () => {
                                 height: "100%",
                                 objectFit: "cover", // Makes video cover the container
                                 objectPosition: "center", // Centers the video
+                                WebkitUserSelect: "none", // Prevents selection
+    userSelect: "none",
+    WebkitTouchCallout: "none",
                               }}
                               onLoadedData={handleVideoLoad}
                             />
