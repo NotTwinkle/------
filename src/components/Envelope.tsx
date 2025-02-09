@@ -120,7 +120,7 @@ const Envelope: React.FC<EnvelopeProps> = () => {
           isFlapped ? "flap" : ""
         }`}
         onClick={!isFlapped ? handleEnvelopeClick : undefined}
-        style={{ transformOrigin: "center", scale: 1.5, zIndex: 10 }}
+        style={{ transformOrigin: "center", scale: 1, zIndex: 10 }}
         animate={isFlapped ? { y: 350, opacity: showHeart ? 0 : 1 } : { y: 0 }}
         transition={{ duration: 0.8 }}
       >
